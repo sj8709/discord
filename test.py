@@ -19,7 +19,7 @@ soup = bs4.BeautifulSoup(html, 'html5lib')
 print('{0}, {1}'.format(location, (soup.find('p', class_='cast_txt').text)))
 print('{0}, {1}'.format(location, (soup.find('p', class_='info_temperature').find('span', class_='todaytemp').text)))
 print('{0}, {1}'.format(location, (soup.find('p', class_='info_temperature').find('span', class_='todaytemp').text)))
-'''
+
 
 name = input()
 enc_location = urllib.parse.quote(name)
@@ -36,3 +36,10 @@ print('티어는 {0}'.format(soup.find('div', class_='TierRank').text))
 lp = soup.find('span', class_='LeaguePoints').text
 lp = lp.strip()
 print('{0}'.format(lp))
+'''
+token = ''
+with open('token.txt', 'r') as fp:
+    token = fp.readlines()
+    token = token[0]
+
+print(token)
